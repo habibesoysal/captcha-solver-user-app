@@ -15,6 +15,8 @@ import java.util.stream.Collectors;
 public class HostUtil {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HostUtil.class.getName());
+
+    //TODO 1) give read and write permission this hosts file
     private static final String HOSTS_FILE_PATH_FOR_UNIX = "/etc/hosts";
     private static final String HOSTS_FILE_PATH_FOR_WINDOWS = "C:/Windows/System32/drivers/etc/hosts";
 
