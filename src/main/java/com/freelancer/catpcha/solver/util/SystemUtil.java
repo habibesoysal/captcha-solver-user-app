@@ -25,6 +25,7 @@ public class SystemUtil {
         if("linux".equalsIgnoreCase(osName) || "mac".equalsIgnoreCase(osName)) {
             return new String[]{"google-chrome", url};
         }
+        //TODO 4) Hard coded path of chrome for windows. Change it according to your system
         return new String[]{"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe", url};
     }
 
