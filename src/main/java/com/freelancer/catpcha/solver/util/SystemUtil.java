@@ -21,11 +21,11 @@ public class SystemUtil {
 
     public String[] getCommand(String host) {
         String osName = getOSName();
+        String url = "http://" + host + ":9999/index.html";
         if("linux".equalsIgnoreCase(osName) || "mac".equalsIgnoreCase(osName)) {
-            return new String[]{"google-chrome", "http://" + host + ":9999/index.html"};
+            return new String[]{"google-chrome", url};
         }
-        //TODO change this path later according to windows version
-        return new String[]{"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe", "http://ksgtelectromech.in/contact.html"};
+        return new String[]{"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe", url};
     }
 
     public String getDomainName(String host) {
