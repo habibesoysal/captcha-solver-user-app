@@ -34,6 +34,17 @@ public class SystemUtil {
         if(domain.contains("/")) {
             domain = domain.substring(0, domain.indexOf('/'));
         }
+        if(domain.contains(".")) {
+            do {
+                int firstIndex = domain.indexOf('.');
+                int lastIndex = domain.lastIndexOf('.');
+                if (firstIndex != lastIndex) {
+                    domain = domain.substring(firstIndex + 1);
+                } else {
+                    break;
+                }
+            }while(true);
+        }
         return domain;
     }
 
