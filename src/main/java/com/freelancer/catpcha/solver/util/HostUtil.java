@@ -57,7 +57,7 @@ public class HostUtil {
         File hostsFile = getHostsFilePath();
         if(isAccessible(hostsFile)) {
             try {
-                String entry = "127.0.1.1\t" + systemUtil.getDomainName(host);
+                String entry = "127.0.0.1\t" + systemUtil.getDomainName(host);
                 LOGGER.info("Entry need to be deleted is {}", entry);
                 List<String> lines = Files.lines(hostsFile.toPath()).filter(line -> !line.equalsIgnoreCase(entry)).collect(Collectors.toList());
                 FileWriter writer = new FileWriter(hostsFile, false);
