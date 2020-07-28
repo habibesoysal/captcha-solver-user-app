@@ -27,7 +27,7 @@ public class HostUtil {
         File hostsFile = getHostsFilePath();
         if(isAccessible(hostsFile)) {
             try {
-                String entry = "\n127.0.1.1\t" + systemUtil.getDomainName(host) + "\n";
+                String entry = "\n127.0.0.1\t" + systemUtil.getDomainName(host) + "\n";
                 LOGGER.info("Entry need to be added is {}", entry);
                 FileWriter writer = new FileWriter(hostsFile, true);
                 writer.write(entry);
