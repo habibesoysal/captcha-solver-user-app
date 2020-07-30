@@ -11,6 +11,7 @@ For linux systems you can give rw permission using `chmod 600 /etc/hosts` comman
 * #### //TODO 2) this is the location of captcha checkbox appear on web page. You have to update this location according to your screen
       robot.mouseMove(100, 180);
   This is the location on screen where robot will click and get the captcha response. This will work on most of the screens, if it doesn't, then you have to find the coordinates and give it here.
+  How to find ordinates ![Check This](/screen.png)
   
 * #### TODO 3) this is the captcha-solver-server-url. You can use local IP address instead of domain
 You can enter **Captcha solver server url** instead of http://captcha-server-by-niranjan.com:9990/. If you are running server app on same system, then you can enter http://localhost:9990/ or http://127.0.0.1:9990/ here.
