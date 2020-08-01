@@ -60,14 +60,21 @@ public class HostUtil {
                 String entry = "127.0.0.1\t" + systemUtil.getDomainName(host);
                 LOGGER.info("Entry need to be deleted is {}", entry);
                 List<String> lines = Files.lines(hostsFile.toPath()).filter(line -> !line.equalsIgnoreCase(entry)).collect(Collectors.toList());
+                int totalLines = lines.size();
+                for (int i = lines.size()-1; i >= 0; i--) {
+                    if(!lines.get(i).trim().isEmpty()) {
+                        break;
+                    }
+                    totalLines--;
+                }
                 FileWriter writer = new FileWriter(hostsFile, false);
-                lines.forEach((line) -> {
+                for (int i=0;i<=totalLines;i++) {
                     try {
-                        writer.write(line + "\n");
+                        writer.write(lines.get(i) + "\n");
                     } catch (Exception ex) {
                         LOGGER.error("Exception in deleting entry in hosts file", ex);
                     }
-                });
+                }
                 LOGGER.info("File write success");
                 writer.close();
                 return true;

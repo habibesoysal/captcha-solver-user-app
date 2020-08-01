@@ -147,8 +147,7 @@ public class Dashboard extends JFrame implements Communicator {
         try {
             Thread.sleep(5 * 1000);
             Robot robot = new Robot();
-            //TODO 2) this is the location of captcha checkbox appear on web page.
-            //TODO 2) you have to update this location according to your screen
+            //TODO 2) this is the location of captcha checkbox appear on web page. You have to update this location according to your screen
             robot.mouseMove(100, 180);
             robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
             Thread.sleep(250);
